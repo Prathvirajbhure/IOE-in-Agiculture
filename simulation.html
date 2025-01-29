@@ -74,20 +74,44 @@ Role:
                     info: `Perception Layer
 The perception layer involves collecting real-time data using sensors and devices installed in the irrigation system.
 
-Components:
-- Soil moisture sensors to monitor soil hydration levels.
-- Flow meters to measure water usage.
+Components of the Smart Irrigation System :
 
-Role:
-- Collects raw data like soil moisture and water levels.
-- Acts as the foundation for all subsequent processing and decision-making.
+-Soil Moisture Sensor: Measures soil water levels.
+-Microcontroller (e.g., Arduino/Raspberry Pi): Processes sensor data.
+-Water Pump: Controls water flow based on sensor data.
 
-Network/Transport Layer
-The network/transport layer ensures seamless data transmission between the perception layer and the data storage/processing systems.
+ Working Principle :
 
+-Sensors detect moisture levels in the soil.
+-If soil is dry, the microcontroller activates the water pump.
+-Once the required moisture level is reached, the pump stops.
 
-Role:
-- Facilitates efficient water management system`
+ Advantages :
+ 
+-Water Conservation: Reduces unnecessary water usage.
+-Automation: Eliminates manual intervention.
+-Remote Monitoring: Access system status from anywhere.
+-Cost-Effective: Saves money in the long run by reducing water bills.
+-Scalability: Can be expanded to large farms and gardens.
+
+ Disadvantages :
+
+-Initial setup cost.
+-Internet connectivity dependency.
+-Sensor maintenance and calibration.
+
+ Real World Applications :
+ 
+-Agriculture: Increases crop yield and sustainability.
+-Home Gardens: Helps maintain lawns and potted plants efficiently.
+-Greenhouses: Maintains optimal growing conditions.
+-Parks & Public Spaces: Ensures efficient watering of landscapes.
+
+Future Enhancements:
+
+-AI-based predictive watering.
+-Solar-powered irrigation systems.
+-Integration with weather forecasts.`
                 },
                 {
                     src: "https://www.tinkercad.com/embed/jifmtOiPgPa?editbtn=1",
@@ -136,7 +160,7 @@ Role:
     <section>
         <iframe id="simulationFrame" src="" frameborder="0" scrolling="no"></iframe>
         <hr>
-        <h2>IoT Architecture</h2>
+        
         <pre id="simulationInfo"></pre>
         <hr>
     </section>
