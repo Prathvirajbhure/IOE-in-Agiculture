@@ -1,0 +1,367 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulation Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #bfbfbf;
+        }
+        header {
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+        }
+        header button {
+            color: white;
+            background-color: #444;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        header button.active {
+            background-color: #007bff;
+        }
+        section {
+            margin: 20px;
+        }
+        iframe {
+            width: 100%;
+            height: 500px;
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+            border-radius: 15px;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ddd;
+            overflow-x: auto;
+            font-size: large;
+            border-radius: 15px;
+        }
+        
+    </style>
+    <script>
+        function showSimulation(index) {
+            const simulations = [
+                {
+                    src: "<iframe width='1290' height='453' src='https://www.tinkercad.com/embed/jCoseKCUo3i?editbtn=1' frameborder='0' marginwidth='0' marginheight='0' scrolling='no' code='no'></iframe>",
+                    info: `1. Perception Layer
+The perception layer is responsible for sensing and collecting environmental data.
+
+Components:
+- Temperature sensors: Measure ambient temperature (e.g., DHT22, LM35).
+- Humidity sensors: Detect the moisture level in the air (e.g., capacitive or resistive sensors).
+- Integrated temperature-humidity modules: Sensors like DHT11/DHT22 for combined data collection.
+
+Role:
+- Captures real-time temperature and humidity data from the environment.
+- Serves as the input layer for subsequent data processing.
+
+2. Network/Transport Layer
+This layer ensures reliable transmission of sensor data to processing units or cloud platforms.
+
+Components:
+- Wireless protocols: Zigbee, LoRa, or Bluetooth for short-range communication.
+- Cellular networks: 4G/5G for remote data transfer over long distances.
+- IoT gateways: Bridges sensor nodes with cloud or edge computing platforms.
+
+Role:
+- Facilitates secure and efficient data communication between devices and servers.
+- Supports real-time updates and monitoring.
+
+3. Data Storage Layer
+The data storage layer handles data persistence and preprocessing for meaningful insights.
+
+Components:
+- Cloud platforms: AWS IoT Core, Azure IoT Hub, or Google Cloud IoT for scalable storage.
+- Local storage: Edge devices for preprocessing and temporary data storage.
+- Databases: NoSQL databases (e.g., MongoDB) for real-time data handling.
+
+Role:
+- Stores temperature and humidity readings for historical analysis.
+- Enables preprocessing to reduce latency in real-time applications.
+- Ensures scalability and reliability for large-scale deployments.
+
+4. Application Layer
+The application layer provides end-users with actionable insights and control options.
+
+Components:
+- Mobile/web applications: User interfaces to view temperature and humidity levels.
+- Dashboards: Graphical representations of real-time and historical data trends.
+- Alerts and notifications: Threshold-based alerts for abnormal temperature or humidity levels.
+- AI/ML models: Predictive analytics for environmental changes based on patterns.
+
+Role:
+- Allows users to monitor environmental conditions remotely.
+- Provides actionable recommendations (e.g., turning on a humidifier or cooling system).
+- Facilitates automation, like triggering fans or dehumidifiers based on sensor data.`,
+                    code: `/*
+This code records the temperature through testing the mV put out by the sensor.
+It records in both Celcius and Fahrenheit. 
+It can only detect from -40 degrees C to 125 degrees C or -40 degrees F 
+to 257 degrees F
+The Humidity is simulated by a potentiometer by being mapped into percentages
+*/
+
+const int analogIn = A0;
+int humiditysensorOutput = 0;
+// Defining Variables
+int RawValue= 0;
+double Voltage = 0;
+double tempC = 0;
+double tempF = 0;
+
+void setup(){  
+  Serial.begin(9600);
+  pinMode(A1, INPUT);
+}
+
+void loop(){
+  
+  RawValue = analogRead(analogIn);
+  Voltage = (RawValue / 1023.0) * 5000; // 5000 to get millivots.
+  tempC = (Voltage-500) * 0.1; // 500 is the offset
+  tempF = (tempC * 1.8) + 32; // convert to F  
+  Serial.print("Raw Value = " );                  
+  Serial.print(RawValue);      
+  Serial.print("\t milli volts = ");
+  Serial.print(Voltage,0); //
+  Serial.print("\t Temperature in C = ");
+  Serial.print(tempC,1);
+  Serial.print("\t Temperature in F = ");
+  Serial.println(tempF,1);
+  humiditysensorOutput = analogRead(A1);
+  Serial.print("Humidity: "); // Printing out Humidity Percentage
+  Serial.print(map(humiditysensorOutput, 0, 1023, 10, 70));
+  Serial.println("%");
+
+  delay(5000);  //iterate every 5 seconds
+
+}`
+                },
+                {
+                    src: '<iframe width="1290" height="453" src="https://www.tinkercad.com/embed/4dXQlrRuO0V?editbtn=1" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>',
+                    info: `Simulation 2:
+1. Perception Layer
+The perception layer involves collecting real-time data using sensors and devices installed in the irrigation system.
+
+Components:
+- Soil moisture sensors to monitor soil hydration levels.
+- Temperature and humidity sensors to track environmental conditions.
+- Flow meters to measure water usage.
+- Weather forecasting integration for predictive adjustments.
+
+Role:
+- Collects raw data like soil moisture, temperature, humidity, and water levels.
+- Acts as the foundation for all subsequent processing and decision-making.
+
+2. Network/Transport Layer
+The network/transport layer ensures seamless data transmission between the perception layer and the data storage/processing systems.
+
+Components:
+- Wireless communication protocols: LoRa, Zigbee, or Wi-Fi for low-power, long-range connectivity.
+- Cellular networks (e.g., 4G/5G) for broader coverage.
+- IoT gateways to connect local sensors to cloud-based services.
+
+Role:
+- Transmits sensor data securely and efficiently to the storage and processing units.
+- Facilitates real-time communication between devices and the cloud.
+
+3. Data Storage Layer
+The data storage layer manages the collected data and processes it for actionable insights.
+
+Components:
+- Cloud storage platforms like AWS IoT Core, Azure IoT Hub, or Google Cloud IoT.
+- Local edge devices for temporary storage and preprocessing to reduce latency.
+- Big data analytics tools for processing large datasets.
+
+Role:
+- Stores sensor data for historical analysis.
+- Enables data preprocessing for faster response times.
+- Supports scalability and backup systems for secure data management.
+
+4. Application Layer
+The application layer provides user-friendly interfaces and actionable insights for decision-making and control.
+
+Components:
+- Mobile and web applications to monitor irrigation status and control settings.
+- Visualization tools like dashboards for real-time data representation.
+- AI/ML algorithms for predictive irrigation scheduling based on weather and soil conditions.
+
+Role:
+- Allows users to remotely control irrigation systems.
+- Automates irrigation based on processed data and predefined thresholds.
+- Provides recommendations to optimize water usage and crop yield.`,
+                    code: '~'
+                },
+                {
+                    src: '<iframe width="1290" height="453" src="https://www.tinkercad.com/embed/exOhiBiFsJ5?editbtn=1" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>',
+                    info: `Simulation 3:
+1. Perception Layer
+This layer is responsible for capturing real-time soil pH data using sensors.
+
+Components:
+- pH sensors or probes to measure soil acidity/alkalinity levels.
+- Temperature sensors to account for temperature variations affecting pH readings.
+- Moisture sensors to ensure accurate pH readings (as soil moisture influences pH).
+
+Role:
+- Collects raw data from the soil, including pH values, temperature, and moisture levels.
+- Acts as the foundational layer for data acquisition.
+
+2. Network/Transport Layer
+The network/transport layer enables reliable data transmission from the perception layer to storage and processing systems.
+
+Components:
+- Wireless communication protocols such as Zigbee, LoRa, or Bluetooth for localized communication.
+- Cellular networks (e.g., 4G/5G) or Wi-Fi for long-range data transmission to cloud servers.
+- IoT gateways to bridge sensors with cloud or edge systems.
+
+Role:
+- Ensures secure, low-latency transfer of soil pH data to storage and processing systems.
+- Supports real-time monitoring and control functionality.
+
+3. Data Storage Layer
+This layer stores the collected data and processes it for actionable insights.
+
+Components:
+- Cloud storage systems (e.g., AWS, Azure) to store large datasets for future analysis.
+- Local edge devices for temporary storage and quick preprocessing.
+- Databases optimized for IoT data (e.g., NoSQL databases like MongoDB).
+
+Role:
+- Stores real-time and historical soil pH data.
+- Enables processing for trend analysis and predictions.
+- Supports secure backups and scalability for expanding sensor networks.
+
+4. Application Layer
+The application layer provides users with meaningful insights and control options.
+
+Components:
+- Mobile and web applications with user-friendly interfaces for monitoring soil pH levels.
+- Dashboards displaying real-time and historical pH trends, temperature, and moisture data.
+- AI/ML algorithms to provide recommendations for soil treatments (e.g., adding lime or sulfur).
+
+Role:
+- Allows users to monitor pH levels remotely and receive alerts for abnormal readings.
+- Provides actionable insights to maintain soil health for better crop yield.
+- Offers predictive analysis for pH fluctuations based on environmental data.`,
+                    code: `#include <LiquidCrystal.h>
+
+LiquidCrystal lcd(13, 12, 10, 11, 5, 7);
+
+const int sensorPin = A0;
+float calibrat=8.34;
+const int sensorPower = 8; 
+const int LED1 = 2;
+const int LED2 = 3;
+const int LED3 = 4;
+
+int soilMoisture;
+float pHValue;
+
+int wetThreshold = 800;
+int dryThreshold = 500;
+
+const int delayTime = 1000;
+
+void setup() {
+  pinMode(LED1, OUTPUT);
+  pinMode(LED2, OUTPUT);
+  pinMode(LED3, OUTPUT);
+  pinMode(sensorPower, OUTPUT);
+
+  lcd.begin(16, 2);
+  lcd.print("Soil ph value");
+  lcd.setCursor(0, 1);
+  lcd.print("& pH Sensor");
+  
+  Serial.begin(9600);
+  lcd.display();
+}
+
+void loop() {
+  digitalWrite(sensorPower, HIGH);
+  delay(10);
+
+  soilMoisture = analogRead(sensorPin);
+  float voltage=soilMoisture*(5.0/1023.0);
+  pHValue=calibrat-3.5*voltage;
+  
+
+  digitalWrite(sensorPower, LOW);
+
+  Serial.print("Soil Moisture: ");
+  Serial.print(soilMoisture);
+  Serial.print(", pH Value: ");
+  Serial.println(pHValue);
+
+  if (soilMoisture > wetThreshold) {
+    digitalWrite(LED1, LOW);
+    digitalWrite(LED2, LOW);
+    digitalWrite(LED3, HIGH);
+  } else if (soilMoisture < dryThreshold) {
+    digitalWrite(LED1, HIGH);
+    digitalWrite(LED2, LOW);
+    digitalWrite(LED3, LOW);
+  } else {
+    digitalWrite(LED1, LOW);
+    digitalWrite(LED2, HIGH);
+    digitalWrite(LED3, LOW);
+  }
+
+  lcd.setCursor(0, 1);
+  lcd.print("pH: ");
+  lcd.print(pHValue);
+  lcd.print("    ");
+
+  delay(delayTime);
+}
+`
+                }
+            ];
+
+            document.getElementById('simulationFrame').srcdoc = simulations[index].src;
+            document.getElementById('simulationInfo').textContent = simulations[index].info;
+            document.getElementById('simulationCode').textContent = simulations[index].code;
+
+            const buttons = document.querySelectorAll('header button');
+            buttons.forEach((btn, idx) => {
+                btn.classList.toggle('active', idx === index);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            showSimulation(0); // Load default simulation
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <button onclick="showSimulation(0)" class="active">DHT11 Temperature and Humidity sensor</button>
+        <button onclick="showSimulation(1)">Smart Irrigation</button>
+        <button onclick="showSimulation(2)">Arduino Soil Moisture ph Sensor</button>
+    </header>
+
+    <section>
+        <iframe id="simulationFrame" srcdoc=""></iframe>
+        <hr>
+        <h2>IoT Architecture</h2>
+        <pre id="simulationInfo"></pre>
+        <hr>
+        <h2>Code:</h2>
+        <pre id="simulationCode" style=" background-color:#272822;
+            color: #f8f8f2;"></pre>
+    </section>
+</body>
+</html>
