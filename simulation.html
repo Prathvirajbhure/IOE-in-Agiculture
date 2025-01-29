@@ -53,82 +53,105 @@
             const simulations = [
                 {
                     src: "https://www.tinkercad.com/embed/j6ZFxsHyUWy?editbtn=1",
-                    info: `Perception Layer
-The perception layer is responsible for sensing and collecting environmental data.
-
+                    info: `
 Components:
 - Temperature sensors: Measure ambient temperature (e.g., TMP36).
+- Microcontroller(Arduino)
+- Display Unit(LCD)
 
-Role:
-- Captures real-time temperature data from the environment.
-- Serves as the input layer for subsequent data processing.
+Working Principle:
+- Temperature Measurement: The temperature sensor (e.g., DHT11, LM35) continuously measures ambient temperature.
+- Data Processing: The sensor sends temperature data to a microcontroller (e.g., Arduino, Raspberry Pi) for processing.
+- Wired Transmission: The microcontroller transmits data.
 
+Advantages:
+- Real-Time Monitoring – Provides instant temperature updates from anywhere.
+- Energy Efficiency – Helps optimize power consumption by automating cooling and heating systems.
+- Remote Accessibility – Users can monitor and control temperature settings remotely.
+- Automation & Alerts – Prevents overheating or freezing through automatic adjustments.
+- Scalability – Can be implemented in homes, industries, healthcare, and agriculture.
 
-Role:
+Disadvantages:
+- Internet Dependency – Requires stable internet connectivity for remote access.
+- Initial Cost – Setup costs can be high, especially for large-scale applications.
+- Sensor Accuracy – Low-cost sensors may have limited precision and require calibration.
+- Security Concerns – IoE devices are vulnerable to hacking if not secured properly.
 
-- continuous monitoring of temperature
-`
+Real-World Applications:
+- Smart Homes – Regulates HVAC (Heating, Ventilation, and Air Conditioning) systems.
+- Industrial Monitoring – Prevents overheating of machinery and electronic components.
+- Healthcare – Ensures proper temperature for patient care, medical storage, and vaccines.
+- Agriculture – Maintains optimal environmental conditions for crops and livestock.
+- Cold Chain Logistics – Monitors temperature in refrigerated transport for perishable goods.`
                 },
                 {
                     src: "https://www.tinkercad.com/embed/4dXQlrRuO0V?editbtn=1",
-                    info: `Perception Layer
-The perception layer involves collecting real-time data using sensors and devices installed in the irrigation system.
+                    info: `
 
 Components of the Smart Irrigation System :
-
--Soil Moisture Sensor: Measures soil water levels.
--Microcontroller (e.g., Arduino/Raspberry Pi): Processes sensor data.
--Water Pump: Controls water flow based on sensor data.
+- Soil Moisture Sensor: Measures soil water levels.
+- Microcontroller (Arduino): Processes sensor data.
+- Water Pump: Controls water flow based on sensor data.
 
  Working Principle :
-
--Sensors detect moisture levels in the soil.
--If soil is dry, the microcontroller activates the water pump.
--Once the required moisture level is reached, the pump stops.
+- Sensors detect moisture levels in the soil.
+- If soil is dry, the microcontroller activates the water pump.
+- Once the required moisture level is reached, the pump stops.
 
  Advantages :
- 
--Water Conservation: Reduces unnecessary water usage.
--Automation: Eliminates manual intervention.
--Remote Monitoring: Access system status from anywhere.
--Cost-Effective: Saves money in the long run by reducing water bills.
--Scalability: Can be expanded to large farms and gardens.
+- Water Conservation: Reduces unnecessary water usage.
+- Automation: Eliminates manual intervention.
+- Remote Monitoring: Access system status from anywhere.
+- Cost-Effective: Saves money in the long run by reducing water bills.
+- Scalability: Can be expanded to large farms and gardens.
 
  Disadvantages :
-
--Initial setup cost.
--Internet connectivity dependency.
--Sensor maintenance and calibration.
+- Initial setup cost.
+- Internet connectivity dependency.
+- Sensor maintenance and calibration.
 
  Real World Applications :
- 
--Agriculture: Increases crop yield and sustainability.
--Home Gardens: Helps maintain lawns and potted plants efficiently.
--Greenhouses: Maintains optimal growing conditions.
--Parks & Public Spaces: Ensures efficient watering of landscapes.
+- Agriculture: Increases crop yield and sustainability.
+- Home Gardens: Helps maintain lawns and potted plants efficiently.
+- Greenhouses: Maintains optimal growing conditions.
+- Parks & Public Spaces: Ensures efficient watering of landscapes.
 
-Future Enhancements:
-
--AI-based predictive watering.
--Solar-powered irrigation systems.
--Integration with weather forecasts.`
+Future Enhancements :
+- AI-based predictive watering.
+- Solar-powered irrigation systems.
+- Integration with weather forecasts.`
                 },
                 {
                     src: "https://www.tinkercad.com/embed/jifmtOiPgPa?editbtn=1",
-                    info: `Perception Layer
-This layer is responsible for capturing real-time soil pH data using sensors.
+                    info: `
+Components :
+- Soil moisture ph sensor .
+- Microcontroller (Arduino).
+- Display Unit (LCD).
 
-Components:
-- pH sensors or probes to measure soil acidity/alkalinity levels.
+Working Principle :
+- pH Detection: The soil pH sensor measures the hydrogen ion concentration in the soil.
+- Signal Processing: The microcontroller converts the analog pH data into a digital format.
+ 
+Advantages : 
+- Real-Time Soil Health Monitoring – Helps farmers make data-driven decisions.
+- Automation & Precision Farming – Enables corrective actions like automatic soil treatment.
+- Remote Accessibility – View soil conditions from anywhere.
+- Improves Crop Yield – Helps maintain optimal pH for better plant growth.
+- Water & Resource Efficiency – Reduces excess use of fertilizers and chemicals.
 
-Role:
-- Collects raw data from the soil, including pH value
-- Acts as the foundational layer for data acquisition.
+Disadvantages :
+- Internet Dependency – Requires stable internet connectivity for cloud monitoring.
+- Calibration Required – Sensors need regular calibration for accuracy.
+- Initial Cost – Higher setup costs for IoT-based systems.
+- Sensor Durability – pH probes degrade over time and require replacement.
 
-Role:
-- Ensures secure, low-latency transfer of soil pH data to storage and processing systems.
-- Supports real-time monitoring and control functionality.
-`
+Real-World Applications :
+- Agriculture – Helps optimize soil conditions for higher crop yield.
+- Gardening & Landscaping – Ensures healthy soil for home gardens and parks.
+- Hydroponics & Greenhouses – Monitors nutrient levels for controlled environments.
+- Industrial & Environmental Monitoring – Used to track soil pollution levels.
+- Smart Farming Systems – Integrates with IoT devices for automated agriculture.`
                 }
             ];
 
