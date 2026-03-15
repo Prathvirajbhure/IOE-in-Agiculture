@@ -6,23 +6,23 @@ A modern, responsive informational platform exploring how the **Internet of Ever
 
 ---
 
-## 🌍 Project Vision
+##  Project Vision
 
 Global food demand is rising, and resources are finite. This project demonstrates how connecting **people, process, data, and things** (the four pillars of IoE) can create a sustainable agricultural ecosystem that:
 
-* 📈 **Boosts Productivity:** Data-driven decisions lead to higher crop yields.
-* 💧 **Conserves Resources:** Smart irrigation prevents water waste.
-* 🌱 **Ensures Sustainability:** Precise nutrient management via pH sensing protects the soil.
+* Boosts Productivity: Data-driven decisions lead to higher crop yields.
+* Conserves Resources: Smart irrigation prevents water waste.
+* Ensures Sustainability: Precise nutrient management via pH sensing protects the soil.
 
 ---
 
-## ✨ Key Features
+##  Key Features
 
-### 📡 Smart Sensor Showcases
+###  Smart Sensor Showcases
 
-* **🌡️ Precision Temperature Monitoring:** Real-time environmental tracking to safeguard climate-sensitive crops.
-* **💧 Automated Irrigation Logic:** Concept overview of moisture-triggered watering systems to optimize hydration.
-* **🧪 Soil Chemistry Analysis:** Understanding pH balance to ensure optimal nutrient absorption and soil health.
+*  Precision Temperature Monitoring: Real-time environmental tracking to safeguard climate-sensitive crops.
+*  Automated Irrigation Logic: Concept overview of moisture-triggered watering systems to optimize hydration.
+*  Soil Chemistry Analysis: Understanding pH balance to ensure optimal nutrient absorption and soil health.
 
 ### 🖥️ User Experience
 
@@ -74,7 +74,7 @@ open index.html
 
 ---
 
-## 🎯 Learning Objectives
+##  Learning Objectives
 
 This project serves as a comprehensive case study for:
 
@@ -84,12 +84,12 @@ This project serves as a comprehensive case study for:
 
 ---
 
-## 🔮 Future Roadmap
+## Future Roadmap
 
-* [ ] **📊 Live Data Visualization:** Integrate Chart.js to show mock real-time sensor data.
-* [ ] **🌦️ API Integration:** Fetch local weather data to predict irrigation needs.
-* [ ] **🧠 AI Recommendations:** Implement basic logic to suggest "Best Crops" based on soil pH.
-* [ ] **🌍 Multi-language Support:** Expanding the reach to global farming communities.
+* [ ]  Live Data Visualization: Integrate Chart.js to show mock real-time sensor data.
+* [ ]  API Integration: Fetch local weather data to predict irrigation needs.
+* [ ]  AI Recommendations: Implement basic logic to suggest "Best Crops" based on soil pH.
+* [ ]  Multi-language Support: Expanding the reach to global farming communities.
 
 ---
 
