@@ -24,7 +24,7 @@ Global food demand is rising, and resources are finite. This project demonstrate
 *  Automated Irrigation Logic: Concept overview of moisture-triggered watering systems to optimize hydration.
 *  Soil Chemistry Analysis: Understanding pH balance to ensure optimal nutrient absorption and soil health.
 
-### 🖥️ User Experience
+###  User Experience
 
 * **Interactive Simulation:** A dedicated page to visualize how these sensors interact in a live farm environment.
 * **Responsive Design:** Optimized for viewing across desktops, tablets, and smartphones.
@@ -32,7 +32,7 @@ Global food demand is rising, and resources are finite. This project demonstrate
 
 ---
 
-## 🛠️ Built With
+##  Built With
 
 * **HTML5:** Semantic structure for high accessibility and SEO.
 * **CSS3:** Custom layouts using modern styling principles (Flexbox/Grid).
@@ -40,7 +40,7 @@ Global food demand is rising, and resources are finite. This project demonstrate
 
 ---
 
-## 📂 Project Structure
+##  Project Structure
 
 ```text
 ioe-agriculture/
@@ -53,7 +53,7 @@ ioe-agriculture/
 
 ---
 
-## 🚀 Installation & Usage
+##  Installation & Usage
 
 ### 1. Clone the Repository
 
