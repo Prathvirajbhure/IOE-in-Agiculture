@@ -98,3 +98,4 @@ This project serves as a comprehensive case study for:
 If you find this educational project useful for understanding Smart Farming, please consider giving it a **Star** on GitHub!
 
 ---
+Thank You
